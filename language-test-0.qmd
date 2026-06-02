@@ -1,0 +1,92 @@
+---
+title: "Stata in Quarto"
+format: html
+jupyter: nbstata
+---
+
+Here, I am following the guidance of Fernando Rios-Avila blog post [Using Quarto for Stata dynamic documents](https://friosavila.github.io/stata_do/stata_do1.html). It's a simple solution that requires a local installation of Stata. **Crucially**, it must be Stata 17 or higher. 
+
+The approach uses a Python package called `nbstata`. So, if you are compiling your Quarto document (website or e-book) within RStudio, like myself, it feels a bit like running Stata via Python via R. 
+
+For those with an older version of Stata, take a look at this [alternative approach](https://aliquote.org/post/stata-quarto/) which uses the `stata_kernel` Python package.
+
+## Installation
+
+You need to ensure that you have a local installation of Python. I am using Anaconda. Next, you need to install `nbstata`. You can do this using the Anaconda Prompt
+
+```{stata}
+*| eval: false
+pip install nbstata
+python -m nbstata.install 
+```
+
+You will also need to check that R is aware of the the Python environment you are using. I did this using the `reticulate` package. In your RStudio console, check
+
+```{stata}
+*| eval: false
+library(reticulate)
+py_config()
+```
+
+This should verify the location of python.exe on your system. If not, RStudio is not aware of your Python environment. Go into Tools > Global Options... > Python. Then Select > Conda Environments and look for your python.exe. Select and then Apply changes. 
+
+Next, check that Quarto has has python3 and nbstata listed as kernels. In the RStudio console you can type:
+
+```{stata}
+*| eval: false
+system("quarto check jupyter")
+```
+
+Alternatively, in the RStudio Terminal type:
+
+```{stata}
+*| eval: false
+quarto check jupyter
+```
+
+You should see listed: "Kernels: nbstata, python3". If not, you need to troubleshoot a while longer. AI can be very helpful for this. 
+
+## Document Setup
+
+With everything installed, you need to include the following in the YAML of your .qmd file. You can also include in the _quarto.yml file, in which case all documents will take on this setting. 
+
+```{stata}
+*| eval: false
+---
+jupyter: nbstata 
+---
+```
+
+
+## Codeblocks
+
+Now you are ready to add Stata codeblocks to your Quarto markdown file. You do this as follows:
+
+````
+```{{stata}}
+describe
+```
+````
+
+The standard [execution options](https://quarto.org/docs/computations/execution-options.html) for Quarto codeblocks work just as they do for R. The only difference is that you use the indicator `*|` in place of `#|`, because in Stata `*` is used to denote a comment.
+
+A very nice feature of this package is that the Stata code is compiled together, so objects defined in one codeblock are visible to another. For example, 
+
+```{stata}
+local test "Am I still defined in Stata?"
+```
+
+Now in a new codeblock:
+
+```{stata}
+display "`test' Yes"
+```
+
+Note, this works for Stata locals which are not defined across do-files in Stata. This is a nice feature of the nbstata package. 
+
+## Limitations
+
+This approach to incorporating Stata in Quarto compiles the document using the nbstata kernel. Unfortunately, this does not allow you to then have codeblocks in other languages. I will demonstrate an alternative, but slightly more complicated, solution to this later on. If you only intend to use Stata, this is the neatest implementation of Stata. 
+
+If you are compiling a website or e-book with multiple .qmd files you can always execute Stata using nbstata in one file, while running R and/or Python in others. The issue is with multilingual files. 
+

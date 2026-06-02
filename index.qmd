@@ -1,0 +1,43 @@
+---
+title: ""
+---
+
+**Welcome!**
+
+I have created this website to explore, document, and share some tools for digital educational resource design in [Quarto](https://quarto.org/). 
+
+I do not have an agenda or end goal in mind. I simply enjoy teaching students to work with and understand data. And really want other teachers to know what brilliant tools now exist. 
+
+
+## About me
+
+I am an education-focused lecturer in Economics at the University of St Andrews (started August 2025). I joined St Andrews after four years in a similar position at the University of Warwick. Over the last few years, I have taught on a number of Econometrics, Data Science, as well as Applied Economics and Research modules. 
+
+My research training was in Applied Microeconomics and based primarily in Stata. Stata is a brilliant software for the analysis of survey data and it also provides a simple entry into the world of programming for students who have an innate aversion to data. Many who promote the idea of teaching languages instead of software at a university level forget that students who select into studying Economics do not typically do so because they want to be programmers. The quantitative side of Economics is a shock to most students.
+
+That said, languages are both more flexible and FREE. With the budgetary constraints faced by universities worldwide, it is hard to argue against the adoption of R, Python, and other opensource languages. And more flexible means more creative!
+
+## Project background
+
+The motivation for this project lies more in an aversion to LaTeX (PDFs) than Stata. I grew tired of trying to find new ways to sync up code from Stata with LaTeX using tools like [`texdoc`](http://fmwww.bc.edu/repec/bocode/t/texdoc.html). Having to include LaTeX code into a .do file results works but is even worse than LaTeX itself.  The 'straw that broke the camel's back' was a presentation I observed on the accessibility issues with LaTeX-published PDFs. The math-type included in these documents is typically not screen readible. 
+
+The solution: [markdown](https://www.markdownguide.org/) and html. It removes the complexities of LaTeX while still allowing you to use LaTeX when it counts: math-type.   
+
+On the top of this was the general sense that the material being created by education professionals in HE was just lagging behind in a digital age. Too many subjects are essentially delivered as a set of 'beamer' slides. We can do better!
+
+In an attempt to figure out ways to create html-published markdown files in Stata - first using Stata's own `markdown` and `dyndoc` functions, and then Germán Rodríguez's [`markstat`](https://grodri.github.io/markstat/gettingStarted#) - I stumbled upon Quarto and Tim Huegerich's guide to [`nbstata`](https://hugetim.github.io/nbstata/user_guide.html#Quarto-tips). This got me excited, *very* excited! I could immediately see its potential for educational resource design. With Quarto, I could start to publish in html while sticking with Stata. Allowing me to build on my current material while I slowly adopted R and/or Python.
+
+Quarto is a lot more flexible than R-markdown and packages like [`bookdown`](https://bookdown.org/). These are great options and I still teach my students how to setup a basic R-markdown file to complete assignments. But as an instructor, wanting to make effective teaching resources, Quarto has it all. Quarto also has incredibly helpful documentation, with creative [examples](https://quarto.org/docs/gallery/) demonstrating what's possible. Its [webpage](https://quarto.org/) includes all the help you need from setup to publication and web-hosting. 
+
+My first few projects included:
+
+- a short pre-reading e-book for my third-year Microeconometrics students (text only);
+- a webpage for a my Master's Econometrics module (using Stata), hosting lecture notes, tutorials, and additional material;
+- a small webpage for my third-year Data Science tutorials (using R);
+- my [personal webpage](https://neil-lloyd.github.io/website/).
+
+I am now trying to take seriously the switch to R and Python, but also the possibility of creating multilingual material. At St Andrews, Econometrics is currently taught using Stata (at both an undergraduate and Master's level); although, we have new Master's programme going all in on Python. Undergraduate Statistics modules are taught using R and many students want to learn Python. The reality is that some students prefer Stata and find R/Python overwhelming, while others want the flexibility to learn multiple languages. I believe that we can teach these in parallel; especially with the aid of modern LLM coding tools. 
+
+## Contact
+
+I can be reached by email at <neil.lloyd@st-andrews.ac.uk>.

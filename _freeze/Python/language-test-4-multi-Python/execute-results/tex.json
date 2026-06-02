@@ -1,0 +1,11 @@
+{
+  "hash": "60f6baae2948463d523ab3c4df2df4bc",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Publishing code-specific PDFs\"\nsubtitle: \"with Python code\"\nformat:\n  pdf:\n    toc: true\njupyter: python3\n---\n\nHere, I run Stata parallel to R and Python using `Statamarkdown`. \n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nprint(\"Hello, Python world!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello, Python world!\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "language-test-4-multi-Python_files"
+    ],
+    "filters": []
+  }
+}

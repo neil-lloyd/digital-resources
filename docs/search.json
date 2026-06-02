@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "language-test-3.html",
+    "href": "language-test-3.html",
+    "title": "R, Python, and Stata in parallel",
+    "section": "",
+    "text": "Here, I run Stata parallel to R and Python using Statamarkdown.\nlibrary(Statamarkdown)\nknitr::opts_chunk$set(collectcode = TRUE)\nTest\nAs previously discussed, Stata local macros are not defined across codeblocks, even with the collectcode=TRUE option. But globals and other objects stored in memory (data, matrices, etc.) are not."
+  },
+  {
+    "objectID": "language-test-3.html#limitations",
+    "href": "language-test-3.html#limitations",
+    "title": "R, Python, and Stata in parallel",
+    "section": "Limitations",
+    "text": "Limitations\nA major limitation of tabset multilingual documents is the way in which they render as PDFs. One of the nice features of Quarto is the ability to seemlessly render html and pdf documents. In general, the pdf documents publish codeblocks very well, which html-like formatting. The only limitation I have seen is when longer lines of code (which would have a scrowler in html) are cut-off in the PDF.\nClick on the linked PDF document (top right) to see how this page is rendered. You will see that code and corresponding output from each tabbed language are displayed in sequential order. As a result, adding a lot of multilingual code to a single document will invariably create a very long pdf.\nIf you want to avoid this, you will need to either avoid PDFs or render PDFs of each language in separate files and find a way to attach them via a link. On the next page I provide a temporary solution for this."
+  },
+  {
+    "objectID": "language-test-1.html",
+    "href": "language-test-1.html",
+    "title": "Multilingual documents (with tabs)",
+    "section": "",
+    "text": "The goal is to create multilingual documents in Quarto where the languages are compiled in parallel across codeblocks and you can navigate between languages using a tab.\nFortunately, people have already solved this problem. And the solution is rather neat. Here, I am following the guidance laid out by Isabella Velasquex in this Posit Blog. Two solutions are offered: the Quarto “tabsets” or a user-written extension called “tabby”.\nHere, I demonstrate a simple implementation of tabsets for R and Python. Note, I am compiling this .qmd file in RStudio. No specific kernel/engine is required."
+  },
+  {
+    "objectID": "language-test-1.html#implementation",
+    "href": "language-test-1.html#implementation",
+    "title": "Multilingual documents (with tabs)",
+    "section": "Implementation",
+    "text": "Implementation\nYou can implement tabs in the following way\n:::{.panel-tabset}\n\n## R\n\n```{r}\nprint(\"Hello, R World!\")\n```\n\n## Python\n\n```{python}\nprint(\"Hello, Python World!\")\n```\n:::\nThe output will look as follows:\n\nRPython\n\n\n\nprint(\"Hello, R World!\")\n\n[1] \"Hello, R World!\"\n\n\n\n\n\nprint(\"Hello, Python World!\")\n\nHello, Python World!"
+  },
+  {
+    "objectID": "language-test-1.html#syncing",
+    "href": "language-test-1.html#syncing",
+    "title": "Multilingual documents (with tabs)",
+    "section": "Syncing",
+    "text": "Syncing\nA nice feature of tabset (and tabby) is that you can get tabs to sync: if you select R in one part of the document (website, e-book, etc.) all tabs in that group switch to R. This is achieved by specifying a group, within which all labels (i.e., ## R) are matched. For example,\n:::{.panel-tabset group=\"languages\"}\n\n## R\n\n```{r}\nprint(\"Hello, R World!\")\n```\n\n## Python\n\n```{python}\nprint(\"Hello, Python World!\")\n```\n:::\nThe output looks just the same, but selecting one tab below does not change the tabs above.\n\nRPython\n\n\n\nprint(\"Hello, R World!\")\n\n[1] \"Hello, R World!\"\n\n\n\n\n\nprint(\"Hello, Python World!\")\n\nHello, Python World!\n\n\n\n\n\nNow, if I create a second tabset using the same group identifier, you will see that the two are synced.\n\nRPython\n\n\n\nprint(\"Hello again, R World!\")\n\n[1] \"Hello again, R World!\"\n\n\n\n\n\nprint(\"Hello again, Python World!\")\n\nHello again, Python World!\n\n\n\n\n\nThis feature is particularly nice for programming languages, but also has other use cases. Tabsets can be used to display any type of output; for example, graphs alongside the data that underpins them (see example). Groups are a useful tool for linking the output of one tabset to another.\n\n\n\n\n\n\nWarningSyncing across tabsets\n\n\n\nIf you open one of the rendered html files on your local machine, this syncing feature will not work unless the html is self-contained. To see the syncing feature you need to preview the site (or page). You can do this by typing quarto preview in the RStudio terminal. You will know that the you are looking at the preview by the URL displayed in your browser: it will start with “localhost:”.\nFor a while, I was certain that the syncing in my html files was broken because of the different ways I was executing Stata code across .qmd files. Turns out, it was a much simpler problem."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Experimenting with Quarto",
+    "section": "",
+    "text": "Welcome!\nI have created this website to explore, document, and share some tools for digital educational resource design in Quarto.\nI do not have an agenda or end goal in mind. I simply enjoy teaching students to work with and understand data. And really want other teachers to know what brilliant tools now exist."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Experimenting with Quarto",
+    "section": "About me",
+    "text": "About me\nI am an education-focused lecturer in Economics at the University of St Andrews (started August 2025). I joined St Andrews after four years in a similar position at the University of Warwick. Over the last few years, I have taught on a number of Econometrics, Data Science, as well as Applied Economics and Research modules.\nMy research training was in Applied Microeconomics and based primarily in Stata. Stata is a brilliant software for the analysis of survey data and it also provides a simple entry into the world of programming for students who have an innate aversion to data. Many who promote the idea of teaching languages instead of software at a university level forget that students who select into studying Economics do not typically do so because they want to be programmers. The quantitative side of Economics is a shock to most students.\nThat said, languages are both more flexible and FREE. With the budgetary constraints faced by universities worldwide, it is hard to argue against the adoption of R, Python, and other opensource languages. And more flexible means more creative!"
+  },
+  {
+    "objectID": "index.html#project-background",
+    "href": "index.html#project-background",
+    "title": "Experimenting with Quarto",
+    "section": "Project background",
+    "text": "Project background\nThe motivation for this project lies more in an aversion to LaTeX (PDFs) than Stata. I grew tired of trying to find new ways to sync up code from Stata with LaTeX using tools like texdoc. Having to include LaTeX code into a .do file results works but is even worse than LaTeX itself. The ‘straw that broke the camel’s back’ was a presentation I observed on the accessibility issues with LaTeX-published PDFs. The math-type included in these documents is typically not screen readible.\nThe solution: markdown and html. It removes the complexities of LaTeX while still allowing you to use LaTeX when it counts: math-type.\nOn the top of this was the general sense that the material being created by education professionals in HE was just lagging behind in a digital age. Too many subjects are essentially delivered as a set of ‘beamer’ slides. We can do better!\nIn an attempt to figure out ways to create html-published markdown files in Stata - first using Stata’s own markdown and dyndoc functions, and then Germán Rodríguez’s markstat - I stumbled upon Quarto and Tim Huegerich’s guide to nbstata. This got me excited, very excited! I could immediately see its potential for educational resource design. With Quarto, I could start to publish in html while sticking with Stata. Allowing me to build on my current material while I slowly adopted R and/or Python.\nQuarto is a lot more flexible than R-markdown and packages like bookdown. These are great options and I still teach my students how to setup a basic R-markdown file to complete assignments. But as an instructor, wanting to make effective teaching resources, Quarto has it all. Quarto also has incredibly helpful documentation, with creative examples demonstrating what’s possible. Its webpage includes all the help you need from setup to publication and web-hosting.\nMy first few projects included:\n\na short pre-reading e-book for my third-year Microeconometrics students (text only);\na webpage for a my Master’s Econometrics module (using Stata), hosting lecture notes, tutorials, and additional material;\na small webpage for my third-year Data Science tutorials (using R);\nmy personal webpage.\n\nI am now trying to take seriously the switch to R and Python, but also the possibility of creating multilingual material. At St Andrews, Econometrics is currently taught using Stata (at both an undergraduate and Master’s level); although, we have new Master’s programme going all in on Python. Undergraduate Statistics modules are taught using R and many students want to learn Python. The reality is that some students prefer Stata and find R/Python overwhelming, while others want the flexibility to learn multiple languages. I believe that we can teach these in parallel; especially with the aid of modern LLM coding tools."
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Experimenting with Quarto",
+    "section": "Contact",
+    "text": "Contact\nI can be reached by email at neil.lloyd@st-andrews.ac.uk."
+  },
+  {
+    "objectID": "language-test-0.html",
+    "href": "language-test-0.html",
+    "title": "Stata in Quarto",
+    "section": "",
+    "text": "Here, I am following the guidance of Fernando Rios-Avila blog post Using Quarto for Stata dynamic documents. It’s a simple solution that requires a local installation of Stata. Crucially, it must be Stata 17 or higher.\nThe approach uses a Python package called nbstata. So, if you are compiling your Quarto document (website or e-book) within RStudio, like myself, it feels a bit like running Stata via Python via R.\nFor those with an older version of Stata, take a look at this alternative approach which uses the stata_kernel Python package."
+  },
+  {
+    "objectID": "language-test-0.html#installation",
+    "href": "language-test-0.html#installation",
+    "title": "Stata in Quarto",
+    "section": "Installation",
+    "text": "Installation\nYou need to ensure that you have a local installation of Python. I am using Anaconda. Next, you need to install nbstata. You can do this using the Anaconda Prompt\n\npip install nbstata\npython -m nbstata.install \n\nYou will also need to check that R is aware of the the Python environment you are using. I did this using the reticulate package. In your RStudio console, check\n\nlibrary(reticulate)\npy_config()\n\nThis should verify the location of python.exe on your system. If not, RStudio is not aware of your Python environment. Go into Tools &gt; Global Options… &gt; Python. Then Select &gt; Conda Environments and look for your python.exe. Select and then Apply changes.\nNext, check that Quarto has has python3 and nbstata listed as kernels. In the RStudio console you can type:\n\nsystem(\"quarto check jupyter\")\n\nAlternatively, in the RStudio Terminal type:\n\nquarto check jupyter\n\nYou should see listed: “Kernels: nbstata, python3”. If not, you need to troubleshoot a while longer. AI can be very helpful for this."
+  },
+  {
+    "objectID": "language-test-0.html#document-setup",
+    "href": "language-test-0.html#document-setup",
+    "title": "Stata in Quarto",
+    "section": "Document Setup",
+    "text": "Document Setup\nWith everything installed, you need to include the following in the YAML of your .qmd file. You can also include in the _quarto.yml file, in which case all documents will take on this setting.\n\n---\njupyter: nbstata \n---"
+  },
+  {
+    "objectID": "language-test-0.html#codeblocks",
+    "href": "language-test-0.html#codeblocks",
+    "title": "Stata in Quarto",
+    "section": "Codeblocks",
+    "text": "Codeblocks\nNow you are ready to add Stata codeblocks to your Quarto markdown file. You do this as follows:\n```{stata}\ndescribe\n```\nThe standard execution options for Quarto codeblocks work just as they do for R. The only difference is that you use the indicator *| in place of #|, because in Stata * is used to denote a comment.\nA very nice feature of this package is that the Stata code is compiled together, so objects defined in one codeblock are visible to another. For example,\n\nlocal test \"Am I still defined in Stata?\"\n\n\nRunning C:\\Users\\ndl1\\OneDrive - University of St Andrews\\Documents\\Resources\\E\n&gt; xperiments\\experiment-1\\profile.do ...\n\n\n\n\n\nNow in a new codeblock:\n\ndisplay \"`test' Yes\"\n\nAm I still defined in Stata? Yes\n\n\nNote, this works for Stata locals which are not defined across do-files in Stata. This is a nice feature of the nbstata package."
+  },
+  {
+    "objectID": "language-test-0.html#limitations",
+    "href": "language-test-0.html#limitations",
+    "title": "Stata in Quarto",
+    "section": "Limitations",
+    "text": "Limitations\nThis approach to incorporating Stata in Quarto compiles the document using the nbstata kernel. Unfortunately, this does not allow you to then have codeblocks in other languages. I will demonstrate an alternative, but slightly more complicated, solution to this later on. If you only intend to use Stata, this is the neatest implementation of Stata.\nIf you are compiling a website or e-book with multiple .qmd files you can always execute Stata using nbstata in one file, while running R and/or Python in others. The issue is with multilingual files."
+  },
+  {
+    "objectID": "language-test-2.html",
+    "href": "language-test-2.html",
+    "title": "Including Stata (alternative)",
+    "section": "",
+    "text": "As mentioned before, the nbstata approach to incorporating Stata code and output in Quarto documents does not permit parallel execution of other languages. In this section, I will demonstrate a solution that uses the R-package Statamarkdown in place of the Python-package nbstata.\nAn alternative solution is offered by Dr Tom Palmer in the R-bloggers post. It exploits the fact that you can compile .qmd files using different engines/kernels and then embed the output into the same file. My reason for skipping this solution is that you would need to write a separate file for each language and codeblock.\nInstead, I am following a solution alluded to in the above blog using Statamarkdown: a R-package designed to execute Stata code within R-markdown documents."
+  },
+  {
+    "objectID": "language-test-2.html#setup",
+    "href": "language-test-2.html#setup",
+    "title": "Including Stata (alternative)",
+    "section": "Setup",
+    "text": "Setup\nYou will need to install the following package in R.\n\ninstall.packages(\"Statamarkdown\")\n\nThen, in your .qmd file you will need to add the following:\n```{r}\n#| include: false\nlibrary(Statamarkdown)\n```\nThis will load the package needed to execute the .qmd file."
+  },
+  {
+    "objectID": "language-test-2.html#implementation",
+    "href": "language-test-2.html#implementation",
+    "title": "Including Stata (alternative)",
+    "section": "Implementation",
+    "text": "Implementation\nOnce, the package is loaded the implementation is relatively straight foward. As before, you can setup tabs using tabset.\n:::{.panel-tabset group=\"languages\"}\n\n## R\n\n```{r}\nprint(\"Hello world!\")\n```\n\n## Stata\n\n```{stata}\ndis \"Hello world!\"\n```\n:::\nThe output will look as follows:\n\nRStata\n\n\n\nprint(\"Hello world!\")\n\n[1] \"Hello world!\"\n\n\n\n\n\ndis \"Hello world!\"\n\nHello world!"
+  },
+  {
+    "objectID": "language-test-2.html#limitation",
+    "href": "language-test-2.html#limitation",
+    "title": "Including Stata (alternative)",
+    "section": "Limitation",
+    "text": "Limitation\nA key limitation of Statamarkdown is that it each codeblock is executed as a separate .do file. This means that memory is lost between codeblocks.\n\nRStata\n\n\n\ntest &lt;- \"Am I still defined in R?\"\ntest\n\n[1] \"Am I still defined in R?\"\n\n\n\n\n\nglobal test \"Am I still defined in Stata?\"\ndisplay \"$test\"\n\nAm I still defined in Stata?\n\n\n\n\n\nNow, in a separate codeblock we try to display the same objects:\n\nRStata\n\n\n\ntest\n\n[1] \"Am I still defined in R?\"\n\n\n\n\n\ndis \"$test No\"\n\n No\n\n\n\n\n\nNote, this problem is specific to Stata and not R."
+  },
+  {
+    "objectID": "language-test-2.html#solution",
+    "href": "language-test-2.html#solution",
+    "title": "Including Stata (alternative)",
+    "section": "Solution",
+    "text": "Solution\nYou need to add collectcode=TRUE to ensure that the Stata codes are not run as separate files.\n:::{.panel-tabset group=\"languages\"}\n\n## R\n\n```{r}\nprint(\"Hello world!\")\n```\n\n## Stata\n\n```{stata, collectcode=TRUE}\ndis \"Hello world!\"\n```\n:::\nAlternatively, you can set this globally at the top of the .qmd file by adding the following code in R:\n```{r}\n#| include: false\nknitr::opts_chunk$set(collectcode = TRUE)\n```\nIn the next section I will implement this change. Switching collectcode on part way through a file causes trouble in the rendering.\n\n\n\n\n\n\nNoteStatamarkdown vs nbstata\n\n\n\nStatamarkdown’s implementation is not as neat as nbstata. The key limitation is that each codeblock appears to be executed as a separate (temporary) do-file, which means local macros are lost across codeblocks, even when collectcode=TRUE (see next page for example).\nThat said, Statamarkdown works with tabset, which is a very nice feature for resource design."
+  },
+  {
+    "objectID": "language-test-4-multi.html",
+    "href": "language-test-4-multi.html",
+    "title": "Publishing language-specific PDFs",
+    "section": "",
+    "text": "As discussed on the previous section, the Quarto default is to render tabset languages as a single PDF. This is less than ideal. In this section I explain a work around. It involves adding a pre-render script that transforms tagged .qmd files into language specific files.\nThe script removes all tabsets from language specific files and renders them only as a PDF. The PDFs are then linked to the multilingual html."
+  },
+  {
+    "objectID": "language-test-4-multi.html#pre-render",
+    "href": "language-test-4-multi.html#pre-render",
+    "title": "Publishing language-specific PDFs",
+    "section": "Pre-render",
+    "text": "Pre-render\nI have attached the python script as a link. The file searches for any .qmd file ending with -multi.qmd. It then creates language-specific versions of each file stored in a folder named after that language.\nThe languages included are: R, Stata, Python, and Julia. If a language is not identified in the file, no language-specific file is created. Additional languages can easily be added by editing the pre-render script. Note, the term ‘language’ here really refers to the tabset labels.\nThe file should ignore tabsets that do not include labels amongst the specified languages. Alternatively, one could edit the script to search only tabsets with a specific tabset group (i.e., group=\"languages\"). However, this will complicate instances where other tabsets include codeblocks that then do not match the engine specified in the single-language files.\nThe script needs to be run before rendering the project. Edit your _quarto.yml as follows:\n```{r}\nproject:\n  type: website\n  output-dir: docs\n  pre-render: _pre-render.py\n```\nRecall, we used the engine: knitr to render these multilingual files. In addition, we needed to load Statamarkdown to run Stata:\n```{r multisetup}\n#| include: false\nlibrary(Statamarkdown)\nknitr::opts_chunk$set(collectcode = TRUE)\n```\nI have specifically named this codeblock multisetup (setup specific to the use of multiple languages) so that it can be easily identified and removed from language-specific files. The code also replaces the engine: knitr with language-specific engines:\n\nR: engine: knitr\nStata: jupyter: nbstata\nPython: jupyter: python3\nJulia: engine: julia\n\nThe code also adds the subtitle “with [language] code” to the published PDF.\n\n\n\n\n\n\nWarningExisting files\n\n\n\nThe pre-render script does not delete all .qmd files in the language-specific sub-directories at the start. For this reason, if you delete a -multi.qmd file from the main folder, you will also need to manually delete all language-specific versions."
+  },
+  {
+    "objectID": "language-test-4-multi.html#linking-pdfs",
+    "href": "language-test-4-multi.html#linking-pdfs",
+    "title": "Publishing language-specific PDFs",
+    "section": "Linking PDFs",
+    "text": "Linking PDFs\nYou need to manually add links to the language-specific files in the -multi.qmd file. Note, these links are stripped from the language-specific .qmd files, which are only rendered as PDFs.\nI was not able to get this functionality to work with Quarto’s format-links. It’s not clear why, as the documentation suggests that they can be quite flexible. In the end, I switched to adding other-links under the html format.\nThe YAML of your -multi.qmd files should look something like:\n\n---\nformat\n  html:\n    toc: true\n    other-links:\n      - text: \"PDF with R\"\n        href: \"R/my-file-R.pdf\"\n        icon: file-pdf\n      - text: \"PDF with Stata\"\n        href: \"Stata/my-file-Stata.pdf\"\n        icon: file-pdf\n      - text: \"PDF with Python\"\n        href: \"Python/my-file-Python.pdf\"\n        icon: file-pdf     \n---\n\nwhere my-file is a place holder for the file name ending in -multi.qmd.\n\n\n\n\n\n\nWarningFile name changes\n\n\n\nIf you change the name of your main .qmd file, you also need to change the name of the corresponding links in the YAML."
+  },
+  {
+    "objectID": "language-test-4-multi.html#proof-of-concept",
+    "href": "language-test-4-multi.html#proof-of-concept",
+    "title": "Publishing language-specific PDFs",
+    "section": "Proof of concept",
+    "text": "Proof of concept\nBelow I run have two simple tabsets, each of which will appear in their language-specific folder. I have excluded any Julia code.\n\nRStataPython\n\n\n\nprint(\"Hello, R world!\")\n\n[1] \"Hello, R world!\"\n\n\n\n\n\ndis \"Hello, Stata world!\"\n\nHello, Stata world!\n\n\n\n\n\nprint(\"Hello, Python world!\")\n\nHello, Python world!\n\n\n\n\n\nSecond tabset:\n\nRStataPython\n\n\n\nprint(\"Hello again, R world!\")\n\n[1] \"Hello again, R world!\"\n\n\n\n\n\ndis \"Hello again, Stata world!\"\n\nHello again, Stata world!\n\n\n\n\n\nprint(\"Hello again, Python world!\")\n\nHello again, Python world!\n\n\n\n\n\nTake a look at the attached files."
+  }
+]

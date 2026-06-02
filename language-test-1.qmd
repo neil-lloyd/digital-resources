@@ -1,0 +1,113 @@
+---
+title: "Multilingual documents (with tabs)"
+engine: knitr
+---
+
+The goal is to create multilingual documents in Quarto where the languages are compiled in parallel across codeblocks and you can navigate between languages using a tab. 
+
+Fortunately, people have already solved this problem. And the solution is rather neat. Here, I am following the guidance laid out by Isabella Velasquex in this [Posit Blog](https://posit.co/blog/creating-multilingual-documentation-with-quarto/). Two solutions are offered: the Quarto "tabsets" or a [user-written](https://quarto.thecoatlessprofessor.com/tabby/) extension called "tabby".
+
+Here, I demonstrate a simple implementation of tabsets for R and Python. Note, I am compiling this .qmd file in RStudio. No specific kernel/engine is required.
+
+## Implementation
+
+You can implement tabs in the following way
+
+````
+:::{.panel-tabset}
+
+## R
+
+```{{r}}
+print("Hello, R World!")
+```
+
+## Python
+
+```{{python}}
+print("Hello, Python World!")
+```
+:::
+````
+
+The output will look as follows:
+
+:::{.panel-tabset}
+
+## R
+
+```{r}
+print("Hello, R World!")
+```
+
+## Python
+
+```{python}
+print("Hello, Python World!")
+```
+:::
+
+
+## Syncing
+
+A nice feature of tabset (and tabby) is that you can get tabs to sync: if you select R in one part of the document (website, e-book, etc.) all tabs in that group switch to R. This is achieved by specifying a `group`, within which all labels (i.e., `## R`) are matched. For example, 
+
+
+````
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{{r}}
+print("Hello, R World!")
+```
+
+## Python
+
+```{{python}}
+print("Hello, Python World!")
+```
+:::
+````
+
+The output looks just the same, but selecting one tab below does not change the tabs above.
+
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{r}
+print("Hello, R World!")
+```
+
+## Python
+
+```{python}
+print("Hello, Python World!")
+```
+:::
+
+Now, if I create a second tabset using the same group identifier, you will see that the two are synced. 
+
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{r}
+print("Hello again, R World!")
+```
+
+## Python
+
+```{python}
+print("Hello again, Python World!")
+```
+:::
+
+This feature is particularly nice for programming languages, but also has other use cases. Tabsets can be used to display any type of output; for example, graphs alongside the data that underpins them ([see example](https://quarto.org/docs/interactive/layout.html)). Groups are a useful tool for linking the output of one tabset to another.  
+
+:::{.callout-warning title="Syncing across tabsets"}
+If you open one of the rendered html files on your local machine, this syncing feature will not work unless the html is [self-contained](https://quarto.org/docs/output-formats/html-basics.html). To see the syncing feature you need to preview the site (or page). You can do this by typing `quarto preview` in the RStudio terminal. You will know that the you are looking at the preview by the URL displayed in your browser: it will start with "localhost:".
+
+For a while, I was certain that the syncing in my html files was broken because of the different ways I was executing Stata code across .qmd files. Turns out, it was a much simpler problem. 
+:::

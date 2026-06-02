@@ -1,0 +1,149 @@
+---
+title: "Including Stata (alternative)"
+format: html
+engine: knitr
+---
+
+```{r}
+#| include: false
+library(Statamarkdown)
+```
+
+As mentioned before, the `nbstata` approach to incorporating Stata code and output in Quarto documents does not permit parallel execution of other languages. In this section, I will demonstrate a solution that uses the R-package `Statamarkdown` in place of the Python-package `nbstata`. 
+
+An alternative solution is offered by Dr Tom Palmer in the [R-bloggers post](https://www.r-bloggers.com/2025/02/creating-effectively-multi-engine-quarto-documents-using-quartos-embed-shortcode/). It exploits the fact that you can compile .qmd files using different engines/kernels and then embed the output into the same file. My reason for skipping this solution is that you would need to write a separate file for each language **and codeblock**.
+
+Instead, I am following a solution alluded to in the above blog using `Statamarkdown`: a R-package designed to execute Stata code within R-markdown documents. 
+
+## Setup
+
+You will need to install the following package in R. 
+
+```{r}
+#| eval: false
+install.packages("Statamarkdown")
+```
+
+Then, in your .qmd file you will need to add the following: 
+````
+```{{r}}
+#| include: false
+library(Statamarkdown)
+```
+````
+
+This will load the package needed to execute the .qmd file. 
+
+## Implementation
+
+Once, the package is loaded the implementation is relatively straight foward. As before, you can setup tabs using tabset. 
+
+````
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{{r}}
+print("Hello world!")
+```
+
+## Stata
+
+```{{stata}}
+dis "Hello world!"
+```
+:::
+````
+
+The output will look as follows:
+
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{r}
+print("Hello world!")
+```
+
+## Stata
+
+```{stata}
+dis "Hello world!"
+```
+:::
+
+## Limitation
+
+A key limitation of `Statamarkdown` is that it each codeblock is executed as a separate .do file. This means that memory is lost between codeblocks. 
+
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{r}
+test <- "Am I still defined in R?"
+test
+```
+
+## Stata
+
+```{stata}
+global test "Am I still defined in Stata?"
+display "$test"
+```
+:::
+
+Now, in a separate codeblock we try to display the same objects:
+
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{r}
+test
+```
+
+## Stata
+
+```{stata}
+dis "$test No"
+```
+:::
+
+Note, this problem is specific to Stata and not R. 
+
+## Solution
+
+You need to add `collectcode=TRUE` to ensure that the Stata codes are not run as separate files. 
+
+````
+:::{.panel-tabset group="languages"}
+
+## R
+
+```{{r}}
+print("Hello world!")
+```
+
+## Stata
+
+```{{stata, collectcode=TRUE}}
+dis "Hello world!"
+```
+:::
+````
+Alternatively, you can set this globally at the top of the .qmd file by adding the following code in R:
+
+````
+```{{r}}
+#| include: false
+knitr::opts_chunk$set(collectcode = TRUE)
+```
+````
+In the next section I will implement this change. Switching `collectcode` on part way through a file causes trouble in the rendering. 
+
+:::{.callout-note title="Statamarkdown vs nbstata"}
+Statamarkdown's implementation is not as neat as nbstata. The key limitation is that each codeblock appears to be executed as a separate (temporary) do-file, which means local macros are lost across codeblocks, even when `collectcode=TRUE` (see next page for example).
+
+That said, Statamarkdown works with tabset, which is a very nice feature for resource design. 
+:::

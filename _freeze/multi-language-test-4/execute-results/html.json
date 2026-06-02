@@ -1,0 +1,15 @@
+{
+  "hash": "39df69db073d17b7db742efbd5a083a4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Publishing code-specific PDFs\"\nformat:\n  html: \n    toc: true\n    other-links:\n      - text: \"PDF with R\"\n        href: \"R/multi-language-test-4-R.pdf\"\n        icon: file-pdf\n      - text: \"PDF with Stata\"\n        href: \"Stata/multi-language-test-4-Stata.pdf\"\n        icon: file-pdf\n      - text: \"PDF with Python\"\n        href: \"Python/multi-language-test-4-Python.pdf\"\n        icon: file-pdf\nengine: knitr\n---\n\nHere, I run Stata parallel to R and Python using `Statamarkdown`. \n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(Statamarkdown)\nknitr::opts_chunk$set(collectcode = TRUE)\n```\n:::\n\n\n:::{.panel-tabset group=\"languages\"}\n\n## R\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, R world!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"Hello, R world!\"\n```\n\n\n:::\n:::\n\n\n## Stata\n\n\n::: {.cell}\n\n```{.stata .cell-code}\ndis \"Hello, Stata world!\"\n```\n\n\n::: {.cell-output .cell-output-stdout}\n\n```\nHello, Stata world!\n```\n\n\n:::\n:::\n\n\n## Python\n\n\n::: {.cell}\n\n```{.python .cell-code}\nprint(\"Hello, Python world!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nHello, Python world!\n```\n\n\n:::\n:::\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hash": "886b5a98ba7d40ae846c52ebe6df63a8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Publishing code-specific PDFs\"\nsubtitle: \"with R code\"\nformat:\n  pdf:\n    toc: true\nengine: knitr\n---\n\nHere, I run Stata parallel to R and Python using `Statamarkdown`. \n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, R world!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"Hello, R world!\"\n```\n\n\n:::\n:::\n\n\n\nChunk 2\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, R world!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"Hello, R world!\"\n```\n\n\n:::\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

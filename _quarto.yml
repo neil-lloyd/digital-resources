@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+  pre-render: _pre-render.py
+  resources:
+    - _pre-render.py
+
+website:
+  title: "Experimenting with Quarto"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Multilingual Documents
+        menu:
+          - href: language-test-0.qmd
+            text: Stata in Quarto
+          - href: language-test-1.qmd
+            text: Multilingual documents (with tabs)
+          - href: language-test-2.qmd
+            text: Including Stata (alternative)
+          - href: language-test-3.qmd
+            text: R, Stata, & Python in parallel
+          - href: language-test-4-multi.qmd
+            text: Publishing language-specific PDFs 
+            
+margin-header: |
+  ::: {.light-content}
+  ![](logos/03-standard-vertical-monochrome-all-black.png)
+  :::
+  ::: {.dark-content}
+  ![](logos/04-standard-vertical-monochrome-all-white.png)
+  :::
+  
+  
+format:
+  html:
+    theme:
+      light: [flatly, style-light.scss]
+      dark: [darkly, style-dark.scss]
+    toc: true
+
+execute:
+  freeze: auto 

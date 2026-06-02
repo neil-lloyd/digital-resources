@@ -1,0 +1,11 @@
+{
+  "hash": "9a27a59d126835adcdae00a230391a36",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Publishing code-specific PDFs\"\nsubtitle: \"with Stata code\"\nformat:\n  pdf:\n    toc: true\njupyter: nbstata\n---\n\nHere, I run Stata parallel to R and Python using `Statamarkdown`. \n\n::: {.cell execution_count=1}\n``` {.stata .cell-code}\ndis \"Hello, Stata world!\"\n```\n\n::: {.cell-output .cell-output-display}\n```\n<IPython.core.display.HTML object>\n```\n:::\n\n::: {.cell-output .cell-output-stdout}\n```\nHello, Stata world!\n```\n:::\n:::\n\n\nChunk 2\n\n::: {.cell execution_count=2}\n``` {.stata .cell-code}\ndis \"Hello, Stata world!\"\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello, Stata world!\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "language-test-5-Stata_files"
+    ],
+    "filters": []
+  }
+}

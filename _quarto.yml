@@ -23,7 +23,11 @@ website:
             text: R, Stata, & Python in parallel
           - href: language-test-4-multi.qmd
             text: Publishing language-specific PDFs 
-            
+      - text: Presentations
+        menu:
+          - href: symposium-presentation.qmd
+            text: CELPiE Symposium - June 2026
+              
 margin-header: |
   ::: {.light-content}
   ![](logos/03-standard-vertical-monochrome-all-black.png)

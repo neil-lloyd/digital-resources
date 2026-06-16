@@ -67,6 +67,7 @@ There is no better way to incorporate code into your teaching material, both fro
 #| echo: true
 #| code-fold: false
 #| warning: false
+#| out-width: "60%"
 
 library(ggplot2)
 ggplot(airquality, aes(Temp, Ozone)) + 
@@ -77,7 +78,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 
 
-## \#3 Multi-lingual documents
+## \#3 Multi-lingual documents {.scrollable}
 
 There are some [caveats](https://neil-lloyd.github.io/digital-resources/language-test-3.html), but you can write documents in multiple languages. 
 
@@ -166,22 +167,22 @@ Unsure about making slides or lecture notes, make both **simulatenously**.
 
 ### .qmd
 
-![](img/pres-symp-jun26/screenshot-lecture-quarto.png){fig-align="center"}
+![](img/pres-symp-jun26/screenshot-lecture-quarto.png){fig-align="center" width=60%}
 
 ### HTML slides
 
-![](img/pres-symp-jun26/screenshot-lecture-slides.png){fig-align="center"}
+![](img/pres-symp-jun26/screenshot-lecture-slides.png){fig-align="center" width=80%}
 
 
 ### PDF notes
-![](img/pres-symp-jun26/screenshot-lecture-notes.png){fig-align="center"}
+![](img/pres-symp-jun26/screenshot-lecture-notes.png){fig-align="center" width=30%}
 :::
 
 ## \#5 Organization
 
 Become a 'web developer' overnight and organize your materials as a website or e-book. 
 
-![](img/pres-symp-jun26/screenshot-website-example.png){fig-align="center" width=80%}
+![](img/pres-symp-jun26/screenshot-website-example.png){fig-align="center" width=70%}
 
 This has *huge* benefits for students. You can add links in Moodle directly to your website, which then remain up to date.[^2]
 
@@ -192,7 +193,7 @@ This has *huge* benefits for students. You can add links in Moodle directly to y
 
 Here are a few things you will need to consider:
 
-- Parcing settings to LaTeX can appears to be tricky! (I've not even tried, yet.)
+- Parcing settings to LaTeX appears to be tricky! (I've not even tried, yet.)
 
 - Formatting html documents requires the use of a CSS/SCSS style sheet. 
 
@@ -204,13 +205,15 @@ Here are a few things you will need to consider:
   
   - My least favourite feature is footnotes! 😔
 
-- Coding with a markdown file requires the use of code blocks. 
+- Coding within a markdown file requires the use of code blocks. 
 
   - Not *necessarily* how you want your students to engage with code. 
 
-  - Can probably write a script to strip the code and create a .r/.py/.do script for your students to run.
+  - Can probably write a script to strip the code and create a .r/.py/.do script for your students to run.[^3]
 
-  - For example, I created a script that turns multi-lingual html documents into separate language-specific PDFs: [https://neil-lloyd.github.io/digital-resources/](https://neil-lloyd.github.io/digital-resources/)
+[^3]: For example, I created a [script](https://neil-lloyd.github.io/digital-resources/language-test-4-multi.html) that turns multi-lingual html documents into separate language-specific PDFs.
 
+# Questions
 
+neil.lloyd\@st-andrews.ac.uk / [https://neil-lloyd.github.io/digital-resources/](https://neil-lloyd.github.io/digital-resources/)
 

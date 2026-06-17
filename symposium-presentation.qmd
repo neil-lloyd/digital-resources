@@ -46,6 +46,50 @@ an open-source scientific and technical publishing system.
 
 4. **Interactivity:** Create "live" interactive documents that allow you to interact with data in real time. 
 
+## Basics
+
+Everything is prepared in a Quarto markdown file (`.qmd`). For example, 
+
+````
+## New slide title
+
+Add a list of
+
+1. item 1
+2. item 2
+
+   a. sub-item 1
+   
+Add some maths: $\hat{\beta}$ is defined as
+
+$$
+  \hat{\beta} = (X'X)^{-1}X'Y
+$$
+
+:::{.callout-note title="Important"}
+This is the most important equation in this module.
+:::
+````
+
+## New slide title
+
+Add a list of
+
+1. item 1
+2. item 2
+
+   a. sub-item 1
+   
+Add some maths: $\hat{\beta}$ is defined as
+
+$$
+  \hat{\beta} = (X'X)^{-1}X'Y
+$$
+
+:::{.callout-note title="Important"}
+This is the most important equation in this module.
+:::
+
 # These are a few of my favourite things...
 
 ## \#1 LaTeX without *LaTeX*

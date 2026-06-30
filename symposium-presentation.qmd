@@ -7,7 +7,6 @@ format:
   revealjs:
     footer: "St Andrews - CELPiE Summer Symposium 2025/26"
     incremental: false
-    
 engine: knitr  
 ---
 

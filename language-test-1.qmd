@@ -1,5 +1,6 @@
 ---
 title: "Multilingual documents (with tabs)"
+format: html
 engine: knitr
 ---
 

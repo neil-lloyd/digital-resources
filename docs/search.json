@@ -4,7 +4,7 @@
     "href": "symposium-presentation.html#posit",
     "title": "Making Digital Resources with Quarto",
     "section": "Posit",
-    "text": "Posit\nFrom the company that brought you RStudio, R Markdown, and more recently Positron, comes\n\nan open-source scientific and technical publishing system."
+    "text": "Posit\nFrom the company that brought you RStudio, R Markdown, and more recently Positron, comes\n\n\n\n\n\nan open-source scientific and technical publishing system."
   },
   {
     "objectID": "symposium-presentation.html#why",
@@ -12,6 +12,20 @@
     "title": "Making Digital Resources with Quarto",
     "section": "Why?",
     "text": "Why?\n\nAccessibility: Creating digital resources solves a well known problem of screen readibility of PDF documents. Solve this problem by publishing simultaneously\n\nmultiple formats: Word, PDF, HTML, etc.\n\nFlexibility: write in markdown, publish as website, document, presentations, blog, dashboard, etc.\n\nmore authentic and creative modes of assessment (in the age of AI)\nmore modern, engaging material\n\nReproducibility: Incorporate reproducible code directly into your documents.\n\nalong with data, tables, and figures\nusing a range of languages: R, Python, Julia, even software like Stata\nsync changes through an online host (e.g. GitHub Pages)\n\nInteractivity: Create “live” interactive documents that allow you to interact with data in real time."
+  },
+  {
+    "objectID": "symposium-presentation.html#basics",
+    "href": "symposium-presentation.html#basics",
+    "title": "Making Digital Resources with Quarto",
+    "section": "Basics",
+    "text": "Basics\nEverything is prepared in a Quarto markdown file (.qmd). For example,\n## New slide title\n\nAdd a list of\n\n1. item 1\n2. item 2\n\n   a. sub-item 1\n   \nAdd some maths: $\\hat{\\beta}$ is defined as\n\n$$\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n$$\n\n:::{.callout-note title=\"Important\"}\nThis is the most important equation in this module.\n:::"
+  },
+  {
+    "objectID": "symposium-presentation.html#new-slide-title",
+    "href": "symposium-presentation.html#new-slide-title",
+    "title": "Making Digital Resources with Quarto",
+    "section": "New slide title",
+    "text": "New slide title\nAdd a list of\n\nitem 1\nitem 2\n\nsub-item 1\n\n\nAdd some maths: \\(\\hat{\\beta}\\) is defined as\n\\[\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n\\]\n\n\n\n\n\n\n\nImportant\n\n\nThis is the most important equation in this module."
   },
   {
     "objectID": "symposium-presentation.html#latex-without-latex",
@@ -215,19 +229,5 @@
     "title": "R, Python, and Stata in parallel",
     "section": "Limitations",
     "text": "Limitations\nA major limitation of tabset multilingual documents is the way in which they render as PDFs. One of the nice features of Quarto is the ability to seemlessly render html and pdf documents. In general, the pdf documents publish codeblocks very well, which html-like formatting. The only limitation I have seen is when longer lines of code (which would have a scrowler in html) are cut-off in the PDF.\nClick on the linked PDF document (top right) to see how this page is rendered. You will see that code and corresponding output from each tabbed language are displayed in sequential order. As a result, adding a lot of multilingual code to a single document will invariably create a very long pdf.\nIf you want to avoid this, you will need to either avoid PDFs or render PDFs of each language in separate files and find a way to attach them via a link. On the next page I provide a temporary solution for this."
-  },
-  {
-    "objectID": "symposium-presentation.html#basics",
-    "href": "symposium-presentation.html#basics",
-    "title": "Making Digital Resources with Quarto",
-    "section": "Basics",
-    "text": "Basics\nEverything is prepared in a Quarto markdown file (.qmd). For example,\n## New slide title\n\nAdd a list of\n\n1. item 1\n2. item 2\n\n   a. sub-item 1\n   \nAdd some maths: $\\hat{\\beta}$ is defined as\n\n$$\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n$$\n\n:::{.callout-note title=\"Important\"}\nThis is the most important equation in this module.\n:::"
-  },
-  {
-    "objectID": "symposium-presentation.html#new-slide-title",
-    "href": "symposium-presentation.html#new-slide-title",
-    "title": "Making Digital Resources with Quarto",
-    "section": "New slide title",
-    "text": "New slide title\nAdd a list of\n\nitem 1\nitem 2\n\nsub-item 1\n\n\nAdd some maths: \\(\\hat{\\beta}\\) is defined as\n\\[\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n\\]\n\n\n\n\n\n\n\nImportant\n\n\nThis is the most important equation in this module."
   }
 ]

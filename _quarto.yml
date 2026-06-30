@@ -27,22 +27,17 @@ website:
         menu:
           - href: symposium-presentation.qmd
             text: CELPiE Symposium - June 2026
-              
-margin-header: |
-  ::: {.light-content}
-  ![](logos/03-standard-vertical-monochrome-all-black.png)
-  :::
-  ::: {.dark-content}
-  ![](logos/04-standard-vertical-monochrome-all-white.png)
-  :::
-  
-  
+            target: "_blank"
+            
 format:
   html:
     theme:
-      light: [flatly, style-light.scss]
-      dark: [darkly, style-dark.scss]
+      light: [flatly, style-website-light.scss]
+      dark: [darkly, style-website-dark.scss]
     toc: true
-
+  revealjs:
+    slide-number: c/t
+    theme: [default, style-slides.scss]
+    
 execute:
   freeze: auto 

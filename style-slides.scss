@@ -1,28 +1,29 @@
 /*-- scss:defaults --*/
 
 $slate:      #cbd7e2;
-$slate-dark: #4a5a6a;
-$orange:     #b34700;
+$mygreen:    #18bc9c;
+$myorange:   #b34700;
 $navy:       #2c3e50;
-$navy-dark:  #1a252f;
-$white:      #ffffff;
+
+
 $text:       #1a1a1a;
-$muted:      #6b7a87;
+$steel-blue: #5b7a99;
+
+$white:      #ffffff;
 
 /*-- scss:rules --*/
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700&display=swap');
 
-// --- Title slide background ----------------------------------
-//   Targets the actual background layer rendered by Reveal.js
+// --- Title slide background ---
 .reveal .backgrounds .slide-background:first-child .slide-background-content {
-  background-color: $navy !important;
+  background-color: $slate !important;
 }
 
 // --- Title slide text ----------------------------------------
 #title-slide {
   h1.title {
-    color: $white;
+    color: $text;
     font-size: 1.8em;
 
   }
@@ -31,20 +32,19 @@ $muted:      #6b7a87;
   .quarto-title-author-name,
   .quarto-title-author,
   .author, .date {
-    color: $white !important;
+    color: $text !important;
   }
 }
 
-// --- Section divider slides ----------------------------------
-//   Add class="section" to a slide divider (e.g. # Heading {.section})
+// --- Section divider slides ---
 .reveal .backgrounds .slide-background.section .slide-background-content {
-  background-color: $navy !important;
+  background-color: $slate !important;
 }
 
 .reveal section.section {
   h2 {
-    color: $white;
-    border-bottom-color: $orange;
+    color: $text;
+    border-bottom-color: $myorange;
   }
 
   .label {
@@ -55,6 +55,11 @@ $muted:      #6b7a87;
     text-transform: uppercase;
     margin-bottom: 0.4em;
   }
+}
+
+// --- Footer -----------------------------------------------------
+.reveal .footer > * {
+  color: $navy !important;
 }
 
 // --- Global reveal styles ------------------------------------
@@ -68,7 +73,7 @@ $muted:      #6b7a87;
   h1, h2, h3, h4 {
     font-family: 'Inter Tight', 'Inter', sans-serif;
     font-weight: 700;
-    color: $navy-dark;
+    color: $text;
     text-transform: none;
     letter-spacing: -0.01em;
     line-height: 1.15;
@@ -86,20 +91,20 @@ $muted:      #6b7a87;
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 5px;
-    background: $orange;
+    background: $myorange;
   }
 
   // --- Headings on normal slides ----------------------------
   h2 {
     font-size: 1.3em;
-    border-bottom: 3px solid $orange;
+    border-bottom: 3px solid $myorange;
     padding-bottom: 0.2em;
     margin-bottom: 0.5em;
     display: inline-block;
   }
 
   h3 {
-    color: $orange;
+    color: $myorange;
     font-size: 0.9em;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -109,11 +114,11 @@ $muted:      #6b7a87;
 
   // --- Links ------------------------------------------------
   a {
-    color: $orange;
+    color: $steel-blue;
     text-decoration: underline;
     text-underline-offset: 3px;
 
-    &:hover { color: $slate-dark; }
+    &:hover { color: $mygreen; }
   }
 
   // --- Lists ------------------------------------------------
@@ -126,39 +131,20 @@ $muted:      #6b7a87;
     }
 
     li::marker {
-      color: $orange;
+      color: $steel-blue;
       font-weight: 700;
     }
   }
 
-  // --- Blockquotes ------------------------------------------
-  blockquote {
-    background: $slate;
-    border-left: 4px solid $orange;
-    border-radius: 0 6px 6px 0;
-    padding: 0.7em 1em;
-    color: $navy-dark;
-    font-style: italic;
-    width: 90%;
-    box-shadow: none;
-
-    p { margin: 0; }
+  // --- Figure images --------------------------------------------
+  figure img, .quarto-figure img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  // --- Code blocks ------------------------------------------
-  pre {
-    border-radius: 6px;
-    border-left: 4px solid $orange;
-    background: #f5f5f5;
-    box-shadow: none;
-  }
-
-  code {
-    color: $orange;
-    background: #dce5ee;
-    border-radius: 3px;
-    padding: 0.05em 0.3em;
-    font-size: 0.85em;
+  code, a code {
+    color: $navy !important;
   }
 
   // --- Tables -----------------------------------------------
@@ -188,33 +174,22 @@ $muted:      #6b7a87;
     }
   }
 
-  // --- Callout / highlight box ------------------------------
-  //   Use <div class="callout"> in your slides
-  .callout {
-    background: $slate;
-    border-left: 4px solid $orange;
-    border-radius: 0 6px 6px 0;
-    padding: 0.6em 1em;
-    margin: 0.8em 0;
-    font-size: 0.85em;
-  }
-
   // --- Footer / slide number --------------------------------
   .slide-number {
-    color: $orange;
+    color: $myorange;
     font-size: 0.5em;
     font-weight: 600;
   }
 
   // --- Progress bar -----------------------------------------
   .progress {
-    color: $orange;
+    color: $myorange;
     height: 4px;
   }
 
   // --- Controls (arrows) ------------------------------------
   .controls {
-    color: $orange;
+    color: $myorange;
   }
 
   // --- Menu icon --------------------------------------------

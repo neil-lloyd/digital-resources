@@ -4,9 +4,10 @@ subtitle: CELPiE Summer Symposium - 18 June 2026
 author: Neil Lloyd
 date: today
 format: 
-  revealjs: 
-    theme: [default, slide-style.scss]
-    embed-resources: true
+  revealjs:
+    footer: "St Andrews - CELPiE Summer Symposium 2025/26"
+    incremental: false
+    
 engine: knitr  
 ---
 
@@ -22,7 +23,7 @@ reticulate::use_condaenv("base")
 
 From the company that brought you RStudio, R Markdown, and more recently Positron, comes
 
-![](img/pres-symp-jun26/logo-quarto.png){fig-align="center" width=20%}
+![](img/pres-symp-jun26/logo-quarto.png){fig-align="center" width=20% .nostretch}
 
 an open-source scientific and technical publishing system.
 
@@ -90,13 +91,13 @@ $$
 This is the most important equation in this module.
 :::
 
-# These are a few of my favourite things...
+# These are a few of my favourite things... {.section}
 
 ## \#1 LaTeX without *LaTeX*
 
 LaTeX is *beautiful*, but LaTeX can also be a huge waste of time. And it's not really a skill our students need. 
 
-![Example from [EC910 lecture notes](https://neil-lloyd.github.io/warwick-ec910/handout-6.html)](img/pres-symp-jun26/screenshot-pdf-example.png){fig-align="center"}
+![Example from [EC910 lecture notes](https://neil-lloyd.github.io/warwick-ec910/handout-6.html)](img/pres-symp-jun26/screenshot-pdf-example.png){fig-align="center" width=80%}
 
 
 A nice feature of Quarto is that it supports LaTeX math syntax and will publish your documents PDFs simultaneously as HTML or Word, so you can have the best of both worlds.
@@ -112,6 +113,7 @@ There is no better way to incorporate code into your teaching material, both fro
 #| code-fold: false
 #| warning: false
 #| out-width: "60%"
+#| fig-align: center
 
 library(ggplot2)
 ggplot(airquality, aes(Temp, Ozone)) + 
@@ -134,6 +136,7 @@ There are some [caveats](https://neil-lloyd.github.io/digital-resources/language
 #| echo: true
 #| code-fold: true
 #| warning: false
+#| fig-align: center
 
 library(tibble)
 
@@ -163,6 +166,7 @@ gg
 ```{python}
 #| echo: true
 #| code-fold: true
+#| fig-align: center
 
 import numpy as np
 import seaborn as sns

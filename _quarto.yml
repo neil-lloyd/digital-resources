@@ -25,10 +25,12 @@ website:
             text: Publishing language-specific PDFs 
       - text: Presentations
         menu:
-          - href: symposium-presentation.qmd
-            text: CELPiE Symposium - June 2026
+          - href: celpie-presentation.qmd
+            text: CELPiE - 18 June 2026
             target: "_blank"
-            
+          - href: tcc-presentation.qmd
+            text: TCC - 2 July 2026
+            target: "_blank"  
 format:
   html:
     theme:

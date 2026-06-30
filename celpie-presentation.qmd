@@ -2,10 +2,9 @@
 title: Making Digital Resources with Quarto
 subtitle: CELPiE Summer Symposium - 18 June 2026
 author: Neil Lloyd
-date: today
 format: 
   revealjs:
-    footer: "St Andrews - CELPiE Summer Symposium 2025/26"
+    footer: "CELPiE Summer Symposium - 18 June 2026"
     incremental: false
 engine: knitr  
 ---

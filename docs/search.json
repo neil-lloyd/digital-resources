@@ -1,73 +1,94 @@
 [
   {
-    "objectID": "symposium-presentation.html#posit",
-    "href": "symposium-presentation.html#posit",
-    "title": "Making Digital Resources with Quarto",
-    "section": "Posit",
-    "text": "Posit\nFrom the company that brought you RStudio, R Markdown, and more recently Positron, comes\n\n\n\n\n\nan open-source scientific and technical publishing system."
+    "objectID": "tcc-presentation.html#r-markdown",
+    "href": "tcc-presentation.html#r-markdown",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "R Markdown",
+    "text": "R Markdown\nR users will be familiar with R markdown.\n\nMarkdown scripts (.Rmd) were designed specifically for R integration\nReverses the code-comment format of an .R script\n\nuncommented text is plain text and formatted based on standard markup syntax\nexecutable code is moved to a code-block.\n\n\nFor example,\nIn the figure below you see a plot of temperature against ozone.  \n\n```\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)\n```"
   },
   {
-    "objectID": "symposium-presentation.html#why",
-    "href": "symposium-presentation.html#why",
-    "title": "Making Digital Resources with Quarto",
+    "objectID": "tcc-presentation.html#quarto",
+    "href": "tcc-presentation.html#quarto",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is a more complete, open-source publishing system developed by Posit.1\n\n\n\n\n\nIt works on the same basic principles as R Markdown but with more features and flexibility.\nThe team that brought you RStudio, R Markdown, and now Positron."
+  },
+  {
+    "objectID": "tcc-presentation.html#why",
+    "href": "tcc-presentation.html#why",
+    "title": "Dynamic Documents with R and Quarto",
     "section": "Why?",
     "text": "Why?\n\nAccessibility: Creating digital resources solves a well known problem of screen readibility of PDF documents. Solve this problem by publishing simultaneously\n\nmultiple formats: Word, PDF, HTML, etc.\n\nFlexibility: write in markdown, publish as website, document, presentations, blog, dashboard, etc.\n\nmore authentic and creative modes of assessment (in the age of AI)\nmore modern, engaging material\n\nReproducibility: Incorporate reproducible code directly into your documents.\n\nalong with data, tables, and figures\nusing a range of languages: R, Python, Julia, even software like Stata\nsync changes through an online host (e.g. GitHub Pages)\n\nInteractivity: Create “live” interactive documents that allow you to interact with data in real time."
   },
   {
-    "objectID": "symposium-presentation.html#basics",
-    "href": "symposium-presentation.html#basics",
-    "title": "Making Digital Resources with Quarto",
-    "section": "Basics",
-    "text": "Basics\nEverything is prepared in a Quarto markdown file (.qmd). For example,\n## New slide title\n\nAdd a list of\n\n1. item 1\n2. item 2\n\n   a. sub-item 1\n   \nAdd some maths: $\\hat{\\beta}$ is defined as\n\n$$\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n$$\n\n:::{.callout-note title=\"Important\"}\nThis is the most important equation in this module.\n:::"
+    "objectID": "tcc-presentation.html#quarto-markdown-basics",
+    "href": "tcc-presentation.html#quarto-markdown-basics",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "Quarto markdown basics",
+    "text": "Quarto markdown basics\nQuarto markdown files (.qmd) work just like .Rmd files.\n## New slide title\n\nAdd a list of\n\n1. item 1\n2. item 2\n\n   a. sub-item 1\n   \nAdd some maths: $\\hat{\\beta}$ is defined as\n\n$$\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n$$\n\n:::{.callout-note title=\"Important\"}\nThis is the most important equation in this module.\n:::\nThey have a few nice features like callout blocks."
   },
   {
-    "objectID": "symposium-presentation.html#new-slide-title",
-    "href": "symposium-presentation.html#new-slide-title",
-    "title": "Making Digital Resources with Quarto",
+    "objectID": "tcc-presentation.html#new-slide-title",
+    "href": "tcc-presentation.html#new-slide-title",
+    "title": "Dynamic Documents with R and Quarto",
     "section": "New slide title",
     "text": "New slide title\nAdd a list of\n\nitem 1\nitem 2\n\nsub-item 1\n\n\nAdd some maths: \\(\\hat{\\beta}\\) is defined as\n\\[\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n\\]\n\n\n\n\n\n\n\nImportant\n\n\nThis is the most important equation in this module."
   },
   {
-    "objectID": "symposium-presentation.html#latex-without-latex",
-    "href": "symposium-presentation.html#latex-without-latex",
-    "title": "Making Digital Resources with Quarto",
-    "section": "#1 LaTeX without LaTeX",
-    "text": "#1 LaTeX without LaTeX\nLaTeX is beautiful, but LaTeX can also be a huge waste of time. And it’s not really a skill our students need.\n\nExample from EC910 lecture notesA nice feature of Quarto is that it supports LaTeX math syntax and will publish your documents PDFs simultaneously as HTML or Word, so you can have the best of both worlds."
+    "objectID": "tcc-presentation.html#basics-of-r-in-quarto",
+    "href": "tcc-presentation.html#basics-of-r-in-quarto",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "Basics of R in Quarto",
+    "text": "Basics of R in Quarto\nAs with R markdown, you add R code inside a code block.\n```{r}\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)\n```"
   },
   {
-    "objectID": "symposium-presentation.html#incorporation-of-code",
-    "href": "symposium-presentation.html#incorporation-of-code",
-    "title": "Making Digital Resources with Quarto",
-    "section": "#2 Incorporation of code",
-    "text": "#2 Incorporation of code\nThere is no better way to incorporate code into your teaching material, both from a design and feature perspective.1\n\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)\n\n\n\n\n\n\n\n\nSee this example from the Quarto Gallery."
+    "objectID": "tcc-presentation.html#basics-of-r-in-quarto-1",
+    "href": "tcc-presentation.html#basics-of-r-in-quarto-1",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "Basics of R in Quarto",
+    "text": "Basics of R in Quarto\nThis renders as follows:"
   },
   {
-    "objectID": "symposium-presentation.html#multi-lingual-documents",
-    "href": "symposium-presentation.html#multi-lingual-documents",
-    "title": "Making Digital Resources with Quarto",
-    "section": "#3 Multi-lingual documents",
-    "text": "#3 Multi-lingual documents\nThere are some caveats, but you can write documents in multiple languages.\n\nRPythonStata\n\n\n\n\nCode\nlibrary(tibble)\n\nset.seed(123)\nn &lt;- 1000\nmu &lt;- 0\nsigma &lt;- 1\ndf &lt;- tibble(x = rnorm(n, mean = mu, sd = sigma))\n\ngg &lt;- ggplot(df, aes(x = x)) +\n  geom_histogram(aes(y = ..density..), bins = 30, fill = \"lightblue\", color = \"black\", alpha = 0.6) +\n  geom_density(color = \"red\", size = 1) +\n  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), color = \"blue\", linetype = \"dashed\", size = 1) +\n  labs(\n    title = \"Simulated Normal Distribution\",\n    subtitle = paste0(\"n = \", n, \", mu = \", mu, \", sigma = \", sigma),\n    x = \"x\",\n    y = \"Density\"\n  ) +\n  theme_minimal()\ngg\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\ndef plot_normal_sim(n=1000, mu=0.0, sigma=1.0, bins=30, seed=123):\n    rng = np.random.default_rng(seed)\n    x = rng.normal(loc=mu, scale=sigma, size=n)\n    fig, ax = plt.subplots(figsize=(8, 5))\n    sns.histplot(x, bins=bins, stat=\"density\", color=\"lightblue\", edgecolor=\"black\", alpha=0.6, ax=ax)\n    sns.kdeplot(x, color=\"red\", linewidth=1.5, ax=ax)\n    xs = np.linspace(x.min() - 1, x.max() + 1, 400)\n    pdf = (1.0 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((xs - mu) / sigma) ** 2)\n    ax.plot(xs, pdf, color=\"blue\", linestyle=\"--\", linewidth=1.5)\n    ax.set_title(f\"Simulated Normal Distribution\\nn={n}, mu={mu}, sigma={sigma}\")\n    ax.set_xlabel(\"x\")\n    ax.set_ylabel(\"Density\")\n    fig.tight_layout()\n    return fig\nplot_normal_sim()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nset obs 1000\ngen x = rnormal()\ntwoway (histogram x, fcolor(ltblue) lcolor(black)) (kdensity x, lcolor(red)) (function y=normalden(x), range(-4 4) lcolor(blue) lpattern(dash)), title(\"Simulated Normal Distribution\") subtitle(\"n=1000, mu=0, sigma=1\") legend(off)\ngraph export \"img/pres-symp-jun26/stata_histogram.png\", replace"
+    "objectID": "tcc-presentation.html#echo-the-code",
+    "href": "tcc-presentation.html#echo-the-code",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "#1 Echo the code",
+    "text": "#1 Echo the code\nYou can choose to echo the code by adding #| echo: true at the top of the code block.\n\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)"
   },
   {
-    "objectID": "symposium-presentation.html#slides-vs-lecture-notes-have-both",
-    "href": "symposium-presentation.html#slides-vs-lecture-notes-have-both",
-    "title": "Making Digital Resources with Quarto",
-    "section": "#4 Slides vs lecture notes, have both!",
-    "text": "#4 Slides vs lecture notes, have both!\nUnsure about making slides or lecture notes, make both simulatenously.\n\n.qmdHTML slidesPDF notes"
+    "objectID": "tcc-presentation.html#fold-the-code",
+    "href": "tcc-presentation.html#fold-the-code",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "#2 Fold the code",
+    "text": "#2 Fold the code\nAdding the option #| code-fold: true will then fold the code block (when publishing as .html)\n\n\nCode\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)"
   },
   {
-    "objectID": "symposium-presentation.html#organization",
-    "href": "symposium-presentation.html#organization",
-    "title": "Making Digital Resources with Quarto",
-    "section": "#5 Organization",
-    "text": "#5 Organization\nBecome a ‘web developer’ overnight and organize your materials as a website or e-book.\n\n\n\n\n\nThis has huge benefits for students. You can add links in Moodle directly to your website, which then remain up to date.1\nQuarto provides excellent guidance one how to host a site: https://quarto.org/docs/websites/"
+    "objectID": "tcc-presentation.html#scrollable-slides",
+    "href": "tcc-presentation.html#scrollable-slides",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "#3 Scrollable slides",
+    "text": "#3 Scrollable slides\nFor revealjs slides, like these, the slide can be “scrollable” to ensure fit.\n\n\nCode\nlibrary(tibble)\n\nset.seed(123)\nn &lt;- 1000\nmu &lt;- 0\nsigma &lt;- 1\ndf &lt;- tibble(x = rnorm(n, mean = mu, sd = sigma))\n\ngg &lt;- ggplot(df, aes(x = x)) +\n  geom_histogram(aes(y = ..density..), bins = 30, fill = \"lightblue\", color = \"black\", alpha = 0.6) +\n  geom_density(color = \"red\", size = 1) +\n  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), color = \"blue\", linetype = \"dashed\", size = 1) +\n  labs(\n    title = \"Simulated Normal Distribution\",\n    subtitle = paste0(\"n = \", n, \", mu = \", mu, \", sigma = \", sigma),\n    x = \"x\",\n    y = \"Density\"\n  ) +\n  theme_minimal()\ngg"
   },
   {
-    "objectID": "symposium-presentation.html#downsides",
-    "href": "symposium-presentation.html#downsides",
-    "title": "Making Digital Resources with Quarto",
-    "section": "Downsides",
-    "text": "Downsides\nHere are a few things you will need to consider:\n\nParcing settings to LaTeX appears to be tricky! (I’ve not even tried, yet.)\nFormatting html documents requires the use of a CSS/SCSS style sheet.\n\nAI can help with this.\n\nMarkdown is an intentionally simple (easy-to-learn) language, but it is not as featureful as LaTeX.\n\nAgain, formatting comes through CSS.\nMy least favourite feature is footnotes! 😔\n\nCoding within a markdown file requires the use of code blocks.\n\nNot necessarily how you want your students to engage with code.\nCan probably write a script to strip the code and create a .r/.py/.do script for your students to run.1\n\n\nFor example, I created a script that turns multi-lingual html documents into separate language-specific PDFs."
+    "objectID": "tcc-presentation.html#tabs-to-split-material",
+    "href": "tcc-presentation.html#tabs-to-split-material",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "#4 Tabs to split material",
+    "text": "#4 Tabs to split material\nAlternatively, use tabs to display different components:\n\nCodeDataPlot\n\n\n\nlibrary(tibble)\n\nset.seed(123)\nn &lt;- 1000\nmu &lt;- 0\nsigma &lt;- 1\ndf &lt;- tibble(x = rnorm(n, mean = mu, sd = sigma))\n\ngg &lt;- ggplot(df, aes(x = x)) +\n  geom_histogram(aes(y = ..density..), bins = 30, fill = \"lightblue\", color = \"black\", alpha = 0.6) +\n  geom_density(color = \"red\", size = 1) +\n  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), color = \"blue\", linetype = \"dashed\", size = 1) +\n  labs(\n    title = \"Simulated Normal Distribution\",\n    subtitle = paste0(\"n = \", n, \", mu = \", mu, \", sigma = \", sigma),\n    x = \"x\",\n    y = \"Density\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "tcc-presentation.html#interactive-material",
+    "href": "tcc-presentation.html#interactive-material",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "Interactive material",
+    "text": "Interactive material\nYou can use Observable JS (within Quarto) to create interactive material.1 Here is a simulation of the OLS estimator for different sample sizes.\n\\[\n  \\begin{aligned}\n    &Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i \\\\\n    \\text{where}\\;& \\beta_0=2,\\; \\beta_1=1.5,\\; X_i\\sim U(0,10),\\; \\text{ and }\\; \\epsilon_i \\sim N(0,3^2)\n  \\end{aligned}  \n\\]\n\nviewof sample_size = Inputs.range(\n  [10, 1000],\n  {value: 500, step: 10, label: \"Sample size\"}\n)\n\n\n\n\n\n\n\nfull_data = transpose(sim_data)\nsample = full_data.slice(0, sample_size)\n\nols_result = {\n  const n = sample.length;\n  const x = sample.map(d =&gt; d.x);\n  const y = sample.map(d =&gt; d.y);\n  const xMean = d3.mean(x);\n  const yMean = d3.mean(y);\n\n  const num = d3.sum(x.map((xi, i) =&gt; (xi - xMean) * (y[i] - yMean)));\n  const den = d3.sum(x.map(xi =&gt; (xi - xMean) ** 2));\n  const slope = num / den;\n  const intercept = yMean - slope * xMean;\n\n  const residuals = x.map((xi, i) =&gt; y[i] - (intercept + slope * xi));\n  const rss = d3.sum(residuals.map(r =&gt; r ** 2));\n  const sigma2 = rss / (n - 2);\n  const seSlope = Math.sqrt(sigma2 / den);\n  const seIntercept = Math.sqrt(sigma2 * (1 / n + (xMean ** 2) / den));\n  \n  return { slope, seSlope, intercept, seIntercept, n };\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;&lt;th&gt;Parameter&lt;/th&gt;&lt;th&gt;Estimate&lt;/th&gt;&lt;th&gt;Std. Error&lt;/th&gt;&lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;&lt;td&gt;Constant (β₀)&lt;/td&gt;&lt;td&gt;${ols_result.intercept.toFixed(3)}&lt;/td&gt;&lt;td&gt;${ols_result.seIntercept.toFixed(3)}&lt;/td&gt;&lt;/tr&gt;\n    &lt;tr&gt;&lt;td&gt;Slope (β₁)&lt;/td&gt;&lt;td&gt;${ols_result.slope.toFixed(3)}&lt;/td&gt;&lt;td&gt;${ols_result.seSlope.toFixed(3)}&lt;/td&gt;&lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;`\n\n\n\n\n\n\nMore advanced versions require the use of a server.\nI took inspriration from this revealjs example in the Quarto gallery."
+  },
+  {
+    "objectID": "tcc-presentation.html#considerations",
+    "href": "tcc-presentation.html#considerations",
+    "title": "Dynamic Documents with R and Quarto",
+    "section": "Considerations",
+    "text": "Considerations\nHere are a few things you will need to consider:\n\nWhen publishing PDFs, troubleshooting and parcing settings to LaTeX can be a tricky!\nFormatting html documents require the use of a CSS/SCSS style sheets.\n\nAI can help with this.\n\nMarkdown is an intentionally simple (easy-to-learn) language, but it is not as featureful as LaTeX.\n\nMy least favourite feature is footnotes! 😔\n\nCoding within a markdown file requires the use of code blocks.\n\nNot necessarily how you work (or want your students to engage with code).\nYou can probably write a script to strip the code and create a .R script for your students to run.\n\nYou can create multi-lingual documents (R, Python, even Stata).\n\nThere are some limitations and solutions. See my discussion here."
   },
   {
     "objectID": "language-test-4-multi.html",
@@ -166,6 +187,76 @@
     "title": "Stata in Quarto",
     "section": "Limitations",
     "text": "Limitations\nThis approach to incorporating Stata in Quarto compiles the document using the nbstata kernel. Unfortunately, this does not allow you to then have codeblocks in other languages. I will demonstrate an alternative, but slightly more complicated, solution to this later on. If you only intend to use Stata, this is the neatest implementation of Stata.\nIf you are compiling a website or e-book with multiple .qmd files you can always execute Stata using nbstata in one file, while running R and/or Python in others. The issue is with multilingual files."
+  },
+  {
+    "objectID": "celpie-presentation.html#posit",
+    "href": "celpie-presentation.html#posit",
+    "title": "Making Digital Resources with Quarto",
+    "section": "Posit",
+    "text": "Posit\nFrom the company that brought you RStudio, R Markdown, and more recently Positron, comes\n\n\n\n\n\nan open-source scientific and technical publishing system."
+  },
+  {
+    "objectID": "celpie-presentation.html#why",
+    "href": "celpie-presentation.html#why",
+    "title": "Making Digital Resources with Quarto",
+    "section": "Why?",
+    "text": "Why?\n\nAccessibility: Creating digital resources solves a well known problem of screen readibility of PDF documents. Solve this problem by publishing simultaneously\n\nmultiple formats: Word, PDF, HTML, etc.\n\nFlexibility: write in markdown, publish as website, document, presentations, blog, dashboard, etc.\n\nmore authentic and creative modes of assessment (in the age of AI)\nmore modern, engaging material\n\nReproducibility: Incorporate reproducible code directly into your documents.\n\nalong with data, tables, and figures\nusing a range of languages: R, Python, Julia, even software like Stata\nsync changes through an online host (e.g. GitHub Pages)\n\nInteractivity: Create “live” interactive documents that allow you to interact with data in real time."
+  },
+  {
+    "objectID": "celpie-presentation.html#basics",
+    "href": "celpie-presentation.html#basics",
+    "title": "Making Digital Resources with Quarto",
+    "section": "Basics",
+    "text": "Basics\nEverything is prepared in a Quarto markdown file (.qmd). For example,\n## New slide title\n\nAdd a list of\n\n1. item 1\n2. item 2\n\n   a. sub-item 1\n   \nAdd some maths: $\\hat{\\beta}$ is defined as\n\n$$\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n$$\n\n:::{.callout-note title=\"Important\"}\nThis is the most important equation in this module.\n:::"
+  },
+  {
+    "objectID": "celpie-presentation.html#new-slide-title",
+    "href": "celpie-presentation.html#new-slide-title",
+    "title": "Making Digital Resources with Quarto",
+    "section": "New slide title",
+    "text": "New slide title\nAdd a list of\n\nitem 1\nitem 2\n\nsub-item 1\n\n\nAdd some maths: \\(\\hat{\\beta}\\) is defined as\n\\[\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n\\]\n\n\n\n\n\n\n\nImportant\n\n\nThis is the most important equation in this module."
+  },
+  {
+    "objectID": "celpie-presentation.html#latex-without-latex",
+    "href": "celpie-presentation.html#latex-without-latex",
+    "title": "Making Digital Resources with Quarto",
+    "section": "#1 LaTeX without LaTeX",
+    "text": "#1 LaTeX without LaTeX\nLaTeX is beautiful, but LaTeX can also be a huge waste of time. And it’s not really a skill our students need.\n\nExample from EC910 lecture notesA nice feature of Quarto is that it supports LaTeX math syntax and will publish your documents PDFs simultaneously as HTML or Word, so you can have the best of both worlds."
+  },
+  {
+    "objectID": "celpie-presentation.html#incorporation-of-code",
+    "href": "celpie-presentation.html#incorporation-of-code",
+    "title": "Making Digital Resources with Quarto",
+    "section": "#2 Incorporation of code",
+    "text": "#2 Incorporation of code\nThere is no better way to incorporate code into your teaching material, both from a design and feature perspective.1\n\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)\n\n\n\n\n\n\n\n\nSee this example from the Quarto Gallery."
+  },
+  {
+    "objectID": "celpie-presentation.html#multi-lingual-documents",
+    "href": "celpie-presentation.html#multi-lingual-documents",
+    "title": "Making Digital Resources with Quarto",
+    "section": "#3 Multi-lingual documents",
+    "text": "#3 Multi-lingual documents\nThere are some caveats, but you can write documents in multiple languages.\n\nRPythonStata\n\n\n\n\nCode\nlibrary(tibble)\n\nset.seed(123)\nn &lt;- 1000\nmu &lt;- 0\nsigma &lt;- 1\ndf &lt;- tibble(x = rnorm(n, mean = mu, sd = sigma))\n\ngg &lt;- ggplot(df, aes(x = x)) +\n  geom_histogram(aes(y = ..density..), bins = 30, fill = \"lightblue\", color = \"black\", alpha = 0.6) +\n  geom_density(color = \"red\", size = 1) +\n  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), color = \"blue\", linetype = \"dashed\", size = 1) +\n  labs(\n    title = \"Simulated Normal Distribution\",\n    subtitle = paste0(\"n = \", n, \", mu = \", mu, \", sigma = \", sigma),\n    x = \"x\",\n    y = \"Density\"\n  ) +\n  theme_minimal()\ngg\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\ndef plot_normal_sim(n=1000, mu=0.0, sigma=1.0, bins=30, seed=123):\n    rng = np.random.default_rng(seed)\n    x = rng.normal(loc=mu, scale=sigma, size=n)\n    fig, ax = plt.subplots(figsize=(8, 5))\n    sns.histplot(x, bins=bins, stat=\"density\", color=\"lightblue\", edgecolor=\"black\", alpha=0.6, ax=ax)\n    sns.kdeplot(x, color=\"red\", linewidth=1.5, ax=ax)\n    xs = np.linspace(x.min() - 1, x.max() + 1, 400)\n    pdf = (1.0 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((xs - mu) / sigma) ** 2)\n    ax.plot(xs, pdf, color=\"blue\", linestyle=\"--\", linewidth=1.5)\n    ax.set_title(f\"Simulated Normal Distribution\\nn={n}, mu={mu}, sigma={sigma}\")\n    ax.set_xlabel(\"x\")\n    ax.set_ylabel(\"Density\")\n    fig.tight_layout()\n    return fig\nplot_normal_sim()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nset obs 1000\ngen x = rnormal()\ntwoway (histogram x, fcolor(ltblue) lcolor(black)) (kdensity x, lcolor(red)) (function y=normalden(x), range(-4 4) lcolor(blue) lpattern(dash)), title(\"Simulated Normal Distribution\") subtitle(\"n=1000, mu=0, sigma=1\") legend(off)\ngraph export \"img/pres-symp-jun26/stata_histogram.png\", replace"
+  },
+  {
+    "objectID": "celpie-presentation.html#slides-vs-lecture-notes-have-both",
+    "href": "celpie-presentation.html#slides-vs-lecture-notes-have-both",
+    "title": "Making Digital Resources with Quarto",
+    "section": "#4 Slides vs lecture notes, have both!",
+    "text": "#4 Slides vs lecture notes, have both!\nUnsure about making slides or lecture notes, make both simulatenously.\n\n.qmdHTML slidesPDF notes"
+  },
+  {
+    "objectID": "celpie-presentation.html#organization",
+    "href": "celpie-presentation.html#organization",
+    "title": "Making Digital Resources with Quarto",
+    "section": "#5 Organization",
+    "text": "#5 Organization\nBecome a ‘web developer’ overnight and organize your materials as a website or e-book.\n\n\n\n\n\nThis has huge benefits for students. You can add links in Moodle directly to your website, which then remain up to date.1\nQuarto provides excellent guidance one how to host a site: https://quarto.org/docs/websites/"
+  },
+  {
+    "objectID": "celpie-presentation.html#downsides",
+    "href": "celpie-presentation.html#downsides",
+    "title": "Making Digital Resources with Quarto",
+    "section": "Downsides",
+    "text": "Downsides\nHere are a few things you will need to consider:\n\nParcing settings to LaTeX appears to be tricky! (I’ve not even tried, yet.)\nFormatting html documents requires the use of a CSS/SCSS style sheet.\n\nAI can help with this.\n\nMarkdown is an intentionally simple (easy-to-learn) language, but it is not as featureful as LaTeX.\n\nAgain, formatting comes through CSS.\nMy least favourite feature is footnotes! 😔\n\nCoding within a markdown file requires the use of code blocks.\n\nNot necessarily how you want your students to engage with code.\nCan probably write a script to strip the code and create a .r/.py/.do script for your students to run.1\n\n\nFor example, I created a script that turns multi-lingual html documents into separate language-specific PDFs."
   },
   {
     "objectID": "index.html",

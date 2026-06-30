@@ -21,7 +21,7 @@ reticulate::use_condaenv("base")
 
 From the company that brought you RStudio, R Markdown, and more recently Positron, comes
 
-![](img/pres-symp-jun26/logo-quarto.png){fig-align="center" width=20% .nostretch}
+![](img/logo-quarto-hexagon.png){fig-align="center" width=20% .nostretch}
 
 an open-source scientific and technical publishing system.
 
@@ -95,7 +95,7 @@ This is the most important equation in this module.
 
 LaTeX is *beautiful*, but LaTeX can also be a huge waste of time. And it's not really a skill our students need. 
 
-![Example from [EC910 lecture notes](https://neil-lloyd.github.io/warwick-ec910/handout-6.html)](img/pres-symp-jun26/screenshot-pdf-example.png){fig-align="center" width=80%}
+![Example from [EC910 lecture notes](https://neil-lloyd.github.io/warwick-ec910/handout-6.html)](celpie-presentation/screenshot-pdf-example.png){fig-align="center" width=80%}
 
 
 A nice feature of Quarto is that it supports LaTeX math syntax and will publish your documents PDFs simultaneously as HTML or Word, so you can have the best of both worlds.
@@ -197,10 +197,10 @@ plot_normal_sim()
 set obs 1000
 gen x = rnormal()
 twoway (histogram x, fcolor(ltblue) lcolor(black)) (kdensity x, lcolor(red)) (function y=normalden(x), range(-4 4) lcolor(blue) lpattern(dash)), title("Simulated Normal Distribution") subtitle("n=1000, mu=0, sigma=1") legend(off)
-graph export "img/pres-symp-jun26/stata_histogram.png", replace
+graph export "celpie-presentation/stata_histogram.png", replace
 ```
 
-![](img/pres-symp-jun26/stata_histogram.png){fig-align="center"}
+![](celpie-presentation/stata_histogram.png){fig-align="center"}
 
 :::
 
@@ -213,22 +213,22 @@ Unsure about making slides or lecture notes, make both **simulatenously**.
 
 ### .qmd
 
-![](img/pres-symp-jun26/screenshot-lecture-quarto.png){fig-align="center" width=60%}
+![](celpie-presentation/screenshot-lecture-quarto.png){fig-align="center" width=60%}
 
 ### HTML slides
 
-![](img/pres-symp-jun26/screenshot-lecture-slides.png){fig-align="center" width=80%}
+![](celpie-presentation/screenshot-lecture-slides.png){fig-align="center" width=80%}
 
 
 ### PDF notes
-![](img/pres-symp-jun26/screenshot-lecture-notes.png){fig-align="center" width=30%}
+![](celpie-presentation/screenshot-lecture-notes.png){fig-align="center" width=30%}
 :::
 
 ## \#5 Organization
 
 Become a 'web developer' overnight and organize your materials as a website or e-book. 
 
-![](img/pres-symp-jun26/screenshot-website-example.png){fig-align="center" width=70%}
+![](celpie-presentation/screenshot-website-example.png){fig-align="center" width=70%}
 
 This has *huge* benefits for students. You can add links in Moodle directly to your website, which then remain up to date.[^2]
 

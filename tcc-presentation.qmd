@@ -40,7 +40,7 @@ Quarto is a more complete, open-source publishing system developed by Posit.[^1]
 
 [^1]: The team that brought you RStudio, R Markdown, and now Positron.
 
-![](img/logo-quarto.png){fig-align="center" width=20%}
+![](img/logo-quarto-hexagon.png){fig-align="center" width=20%}
 
 It works on the same basic principles as R Markdown but with more features and flexibility. 
 

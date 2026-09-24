@@ -259,6 +259,69 @@
     "text": "Downsides\nHere are a few things you will need to consider:\n\nParcing settings to LaTeX appears to be tricky! (I’ve not even tried, yet.)\nFormatting html documents requires the use of a CSS/SCSS style sheet.\n\nAI can help with this.\n\nMarkdown is an intentionally simple (easy-to-learn) language, but it is not as featureful as LaTeX.\n\nAgain, formatting comes through CSS.\nMy least favourite feature is footnotes! 😔\n\nCoding within a markdown file requires the use of code blocks.\n\nNot necessarily how you want your students to engage with code.\nCan probably write a script to strip the code and create a .r/.py/.do script for your students to run.1\n\n\nFor example, I created a script that turns multi-lingual html documents into separate language-specific PDFs."
   },
   {
+    "objectID": "brownbag-presentation.html#posit",
+    "href": "brownbag-presentation.html#posit",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Posit",
+    "text": "Posit\nFrom the company that brought you RStudio, R Markdown, and more recently Positron, comes\n\n\n\n\n\nan open-source scientific and technical publishing system."
+  },
+  {
+    "objectID": "brownbag-presentation.html#basics",
+    "href": "brownbag-presentation.html#basics",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Basics",
+    "text": "Basics\nEverything is prepared in a Quarto markdown file (.qmd). For example,\n## New slide title\n\nAdd a list of\n\n1. item 1\n2. item 2\n\n   a. sub-item 1\n   \nAdd some maths: $\\hat{\\beta}$ is defined as\n\n$$\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n$$\n\n:::{.callout-note title=\"Important\"}\nThis is the most important equation in this module.\n:::"
+  },
+  {
+    "objectID": "brownbag-presentation.html#new-slide-title",
+    "href": "brownbag-presentation.html#new-slide-title",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "New slide title",
+    "text": "New slide title\nAdd a list of\n\nitem 1\nitem 2\n\nsub-item 1\n\n\nAdd some maths: \\(\\hat{\\beta}\\) is defined as\n\\[\n  \\hat{\\beta} = (X'X)^{-1}X'Y\n\\]\n\n\n\n\n\n\n\nImportant\n\n\nThis is the most important equation in this module."
+  },
+  {
+    "objectID": "brownbag-presentation.html#code-management",
+    "href": "brownbag-presentation.html#code-management",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Code management",
+    "text": "Code management\nExample: Luc’s PP5000 webpage"
+  },
+  {
+    "objectID": "brownbag-presentation.html#content-management-and-workflow",
+    "href": "brownbag-presentation.html#content-management-and-workflow",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Content management and workflow",
+    "text": "Content management and workflow\nExample: David’s PP5001 webpage"
+  },
+  {
+    "objectID": "brownbag-presentation.html#design-and-formatting",
+    "href": "brownbag-presentation.html#design-and-formatting",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Design and formatting",
+    "text": "Design and formatting\nExample: Neil’s EC3301 webpage"
+  },
+  {
+    "objectID": "brownbag-presentation.html#pros",
+    "href": "brownbag-presentation.html#pros",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Pros",
+    "text": "Pros\n\nAccessibility: Creating digital resources solves a well known problem of screen readibility of PDF documents. Solve this problem by publishing simultaneously\n\nmultiple formats: .docx, .pdf, .html, etc.\n\nFlexibility: write in markdown, publish as website, document, presentations, blog, dashboard, etc.\n\nmore authentic and creative modes of assessment (in the age of AI)\nmore modern, engaging material\n\nReproducibility: Incorporate reproducible code directly into your documents.\n\n‘single source of truth’\nusing a range of languages: R, Python, Julia, even software like Stata\nintegration with AI-assisted workflow\n\nInteractivity: Create “live” interactive documents that allow you to interact with data in real time."
+  },
+  {
+    "objectID": "brownbag-presentation.html#cons",
+    "href": "brownbag-presentation.html#cons",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Cons",
+    "text": "Cons\nHere are a few things you will need to consider:\n\nFormatting html documents requires the use of a CSS/SCSS style sheet\n\nAI can help with this, or just ‘keep it simple stupid’\nMarkdown is an intentionally simple (easy-to-learn) language\nCan enhance with html\n\nCoding within a markdown file requires the use of code blocks\n\nNot how you order research/analysis\nNot necessarily how you want your students to engage with code\nDebugging can be inefficient\nReplacement more for .tex/.pptx than .do/.R/.py"
+  },
+  {
+    "objectID": "brownbag-presentation.html#a-quick-guide",
+    "href": "brownbag-presentation.html#a-quick-guide",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "A quick guide:",
+    "text": "A quick guide:\nDavid has created a helpful Quarto (and Positron) guide for the MPP students:"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Experimenting with Quarto",
@@ -320,5 +383,12 @@
     "title": "R, Python, and Stata in parallel",
     "section": "Limitations",
     "text": "Limitations\nA major limitation of tabset multilingual documents is the way in which they render as PDFs. One of the nice features of Quarto is the ability to seemlessly render html and pdf documents. In general, the pdf documents publish codeblocks very well, which html-like formatting. The only limitation I have seen is when longer lines of code (which would have a scrowler in html) are cut-off in the PDF.\nClick on the linked PDF document (top right) to see how this page is rendered. You will see that code and corresponding output from each tabbed language are displayed in sequential order. As a result, adding a lot of multilingual code to a single document will invariably create a very long pdf.\nIf you want to avoid this, you will need to either avoid PDFs or render PDFs of each language in separate files and find a way to attach them via a link. On the next page I provide a temporary solution for this."
+  },
+  {
+    "objectID": "brownbag-presentation.html#code-management-and-programming",
+    "href": "brownbag-presentation.html#code-management-and-programming",
+    "title": "Using Quarto as a Teaching Tool",
+    "section": "Code management and programming",
+    "text": "Code management and programming\nExample: Luc’s PP5000 webpage"
   }
 ]

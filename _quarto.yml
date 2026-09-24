@@ -25,12 +25,16 @@ website:
             text: Publishing language-specific PDFs 
       - text: Presentations
         menu:
+          - href: brownbag-presentation.qmd
+            text: Brown Bag - 30 September 2026
+            target: "_blank" 
           - href: tcc-presentation.qmd
             text: TCC - 2 July 2026
             target: "_blank"
           - href: celpie-presentation.qmd
             text: CELPiE - 18 June 2026
             target: "_blank"
+ 
 
 format:
   html:
